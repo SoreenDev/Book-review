@@ -19,15 +19,15 @@ class DatabaseSeeder extends Seeder
             $numberReview = random_int(5,30);
             Review::factory()->count($numberReview)->god()->for($book)->create();
         });
-        
-        Book::factory(46)->create()->each(function($book){
-            $numberReview = random_int(5,30);
-            Review::factory()->count($numberReview)->average()->for($book)->create();
-        });
-        
-        Book::factory(34)->create()->each(function($book){
-            $numberReview = random_int(5,30);
-            Review::factory()->count($numberReview)->bad()->for($book)->create();
-        });
+
+        // Book::factory(46)->create()->each(function($book){
+        //     $numberReview = random_int(5,30);
+        //     Review::factory()->count($numberReview)->average()->for($book)->create();
+        // });
+
+        // Book::factory(34)->create()->each(function($book){
+        //     $numberReview = random_int(5,30);
+        //     Review::factory()->count($numberReview)->bad()->for($book)->create();
+        // });
     }
 }
