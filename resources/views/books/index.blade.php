@@ -1,7 +1,11 @@
 @extends('books.layout.app')
 @section('content')
 
-    <form action=""></form>
+    <form action="{{ route('books.index') }}" method="GET" class="mb-4 flex space-x-2">
+        <input type="text" name="title" id="" class="input" placeholder="Search by title" value=" {{ request('title') }} ">
+        <button type="submit" class="btn">Search</button>
+        <a href="{{route('books.index')}}" class="btn">Clear</a>
+    </form>
 
     <h1 class="mb-10 text-2x1">Books</h1>
     <ul>
