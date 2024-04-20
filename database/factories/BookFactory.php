@@ -22,6 +22,7 @@ class BookFactory extends Factory
             'created_at'=>fake()->dateTimeBetween('years'),
             'updated_at'=>function( array $attribute){
                  return fake()->dateTimeBetween($attribute['created_at']);
-        }        ];
+          }
+        ];
     }
 }
