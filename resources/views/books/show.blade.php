@@ -20,7 +20,10 @@
   <div>
     <h2 class="mb-4 text-xl font-semibold">Reviews</h2>
     <ul>
-      @forelse ($book->reviews as $review)
+        @php
+        $reviews = $book->reviews()->paginate(5) ;
+        @endphp
+      @forelse ($reviews as $review)
         <li class="book-item mb-4">
           <div>
             <div class="mb-2 flex items-center justify-between">
@@ -40,4 +43,10 @@
       @endforelse
     </ul>
   </div>
+  @if ($reviews->count())
+
+  <nav class=" mt-4 ">{{ $reviews->links() }}</nav>
+
+@endif
+
 @endsection
