@@ -17,12 +17,14 @@
       </div>
     </div>
   </div>
-
+  <div>
+    <a href="{{route('books.reviews.create', $book)}}" class="reset-link mb-4">Add review !</a>
+  </div>
   <div>
     <h2 class="mb-4 text-xl font-semibold">Reviews</h2>
     <ul>
         @php
-        $reviews = $book->reviews()->paginate(5) ;
+        $reviews = $book->reviews ;
         @endphp
       @forelse ($reviews as $review)
         <li class="book-item mb-4">
@@ -44,10 +46,6 @@
       @endforelse
     </ul>
   </div>
-  @if ($reviews->count())
 
-  <nav class=" mt-4 ">{{ $reviews->links() }}</nav>
-
-@endif
 
 @endsection
